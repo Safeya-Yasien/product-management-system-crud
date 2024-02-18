@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="product management system" />
+    <link rel="stylesheet" href="css/style.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Protest+Riot&display=swap"
+      rel="stylesheet"
+    />
+
+    <title>Full product management system cruds</title>
+  </head>
+  <body>
+    <div class="crud">
+      <div class="head">
+        <h1>cruds</h1>
+        <p>Create Read Update Delete Search</p>
+      </div>
+
+      <div class="inputs">
+        <input type="text" id="title" placeholder="Title" />
+        <div class="price-box">
+          <input type="number" id="price" placeholder="Price" />
+          <input type="number" id="taxes" placeholder="Taxes" />
+          <input type="number" id="ads" placeholder="Ads" />
+          <input type="number" id="discount" placeholder="Discount" />
+          <p id="total">11111</p>
+        </div>
+
+        <input type="number" id="count" placeholder="Count" />
+        <input type="text" id="category" placeholder="Category" />
+        <button id="create">Create</button>
+      </div>
+
+      <div class="output">
+        <div class="search-box">
+          <input type="text" id="search" placeholder="Search" />
+          <div class="search-buttons">
+            <button id="search-title">Search By Title</button>
+            <button id="search-category">Search By Category</button>
+          </div>
+        </div>
+
+        <!-- 9 -->
+        <table>
+          <tr>
+            <th>id</th>
+            <th>title</th>
+            <th>price</th>
+            <th>taxes</th>
+            <th>ads</th>
+            <th>discount</th>
+            <th>category</th>
+            <th>total</th>
+            <th>update</th>
+            <th>delete</th>
+          </tr>
+
+          <!-- <tr>
+            <td>1</td>
+            <td>phone</td>
+            <td>100</td>
+            <td>100</td>
+            <td>100</td>
+            <td>100</td>
+            <td>100</td>
+            <td>phone</td>
+            <td><button id="update-button">update</button></td>
+            <td><button id="delete-button">delete</button></td>
+          </tr> -->
+        </table>
+      </div>
+    </div>
+
+    <script src="js/main.js"></script>
+  </body>
+</html>
