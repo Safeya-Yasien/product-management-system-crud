@@ -98,20 +98,7 @@ function displayData() {
   getTotal();
   let table = "";
   for (let i = 0; i < products.length; i++) {
-    table += `
-        <tr>
-        <td>${i + 1}</td>
-        <td>${products[i].title}</td>
-        <td>${products[i].price}</td>
-        <td>${products[i].taxes}</td>
-        <td>${products[i].ads}</td>
-        <td>${products[i].discount}</td>
-        <td>${products[i].category}</td>
-        <td>${products[i].total}</td>
-        <td><button onclick="updateProduct(${i})" id="update-button">update</button></td>
-        <td><button onclick="deleteProduct(${i})" id="delete-button">delete</button></td>
-      </tr>
-         `;
+    table += createTable(i);
   }
 
   document.getElementById("tbody").innerHTML = table;
@@ -127,7 +114,22 @@ function displayData() {
   }
 }
 
-// function createTable() {}
+function createTable(index) {
+  return `
+      <tr>
+        <td>${index + 1}</td>
+        <td>${products[index].title}</td>
+        <td>${products[index].price}</td>
+        <td>${products[index].taxes}</td>
+        <td>${products[index].ads}</td>
+        <td>${products[index].discount}</td>
+        <td>${products[index].category}</td>
+        <td>${products[index].total}</td>
+        <td><button onclick="updateProduct(${index})" id="update-button">update</button></td>
+        <td><button onclick="deleteProduct(${index})" id="delete-button">delete</button></td>
+      </tr>
+    `;
+}
 
 function deleteProduct(index) {
   products.splice(index, 1);
@@ -180,37 +182,11 @@ function searchProduct(value) {
   for (let i = 0; i < products.length; i++) {
     if (searchMood === "title") {
       if (products[i].title.includes(value.toLowerCase())) {
-        table += `
-              <tr>
-              <td>${i}</td>
-              <td>${products[i].title}</td>
-              <td>${products[i].price}</td>
-              <td>${products[i].taxes}</td>
-              <td>${products[i].ads}</td>
-              <td>${products[i].discount}</td>
-              <td>${products[i].category}</td>
-              <td>${products[i].total}</td>
-              <td><button onclick="updateProduct(${i})" id="update-button">update</button></td>
-              <td><button onclick="deleteProduct(${i})" id="delete-button">delete</button></td>
-            </tr>
-               `;
+        table += createTable(i);
       }
     } else {
       if (products[i].category.includes(value.toLowerCase())) {
-        table += `
-              <tr>
-              <td>${i}</td>
-              <td>${products[i].title}</td>
-              <td>${products[i].price}</td>
-              <td>${products[i].taxes}</td>
-              <td>${products[i].ads}</td>
-              <td>${products[i].discount}</td>
-              <td>${products[i].category}</td>
-              <td>${products[i].total}</td>
-              <td><button onclick="updateProduct(${i})" id="update-button">update</button></td>
-              <td><button onclick="deleteProduct(${i})" id="delete-button">delete</button></td>
-            </tr>
-               `;
+        table += createTable(i);
       }
     }
   }
