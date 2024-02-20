@@ -120,7 +120,7 @@ button:hover {
   width: 45%;
 }
 
-#delete-all{
+#delete-all {
   margin-top: 10px;
 }
 
@@ -129,6 +129,12 @@ table {
   text-align: center;
   margin-top: 20px;
   font-family: monospace;
+}
+
+@media (max-width: 767px) {
+  table {
+    font-size: 8px;
+  }
 }
 
 table th {
@@ -147,8 +153,7 @@ table td button {
   font-weight: normal;
 }
 
-
-#total.result{
+#total.result {
   background-color: green;
   color: white;
   font-weight: normal;
